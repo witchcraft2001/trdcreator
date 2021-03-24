@@ -1,0 +1,9 @@
+TRDCReator v.0.1
+(C) 2021 D.Mikhaltchenkov (mikhaltchenkov@gmail.com)
+
+Утилита для создания пустого TRD-образа под ОС Sprinter DSS.
+
+Запуск:
+TRDCR.EXE filename.trd
+
+Если файл с таким же именем будет найден, то операция будет прервана.

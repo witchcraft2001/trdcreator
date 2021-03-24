@@ -41,10 +41,10 @@ char *filename;
 	char *info_sector;
 	int i;        
 
-	printf("Creating TRD-file: %s ...", filename);
+	printf("Creating TRD-file: %s ... ", filename);
 	if ((fd=open(filename, O_CREAT|O_WRONLY)) == -1)
 	{
-		printf("ERROR: Can't create file: %s", filename);
+		printf("\nERROR: Can't create file: %s", filename);
 		return FALSE;
 	}
 	clear_sectors = calloc(256,1);
@@ -53,7 +53,7 @@ char *filename;
 	//writing catalogue
 	for(i=0;i<8;i++)
 	{
-		write(fd,clear_sectors, 256);
+		write(fd,clear_sectors,256);
 	}
                      
 	for(i=0;i<sizeof(info);i++)
@@ -76,25 +76,25 @@ char *filename;
 	return TRUE;
 }
 
-void prt_hello()
+void print_hello()
 {
-	printf("TRDCReator v.0.1 by D.Mikhaltchenkov\n\n");
+	printf("TRDCReator v.0.1a by Mikhaltchenkov Dmitry aka Hard/WCG\n\n");
 }
 
 main(argc, argv)
 int argc;
 char *argv[];
 {
+	print_hello();
 	if(argc==1)
 	{
-		prt_hello();
 		printf("Usage:\t\tTRDCR <TRD file>\n");
 		printf("Example:\tTRDCR FILE.TRD\n");
 		exit(0);
 	}
 
 	if (is_file_exists(argv[1])) {
-		printf("File %s is exists. Aborted.\n", argv[1]);
+		printf("\nFile %s is exists. Aborted.\n", argv[1]);
 		exit(-2);
 	}
 
